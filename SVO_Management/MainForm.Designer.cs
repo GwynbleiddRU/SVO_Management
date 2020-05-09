@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.appName = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -48,7 +48,6 @@
             this.exitButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.minimizeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.personnelScreen = new SVO_Management.PanelPersonnel();
-            this.mapScreen = new SVO_Management.PanelMap();
             this.panelHeader.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderButton)).BeginInit();
@@ -116,22 +115,22 @@
             // 
             this.menuAnimator.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.menuAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.menuAnimator.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.menuAnimator.DefaultAnimation = animation1;
             // 
             // orderButton
             // 
@@ -388,22 +387,12 @@
             this.personnelScreen.Size = new System.Drawing.Size(790, 636);
             this.personnelScreen.TabIndex = 8;
             // 
-            // mapScreen
-            // 
-            this.menuAnimator.SetDecoration(this.mapScreen, BunifuAnimatorNS.DecorationType.None);
-            this.mapScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mapScreen.Location = new System.Drawing.Point(350, 60);
-            this.mapScreen.Name = "mapScreen";
-            this.mapScreen.Size = new System.Drawing.Size(790, 636);
-            this.mapScreen.TabIndex = 9;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1140, 696);
-            this.Controls.Add(this.mapScreen);
             this.Controls.Add(this.personnelScreen);
             this.Controls.Add(this.orderButton);
             this.Controls.Add(this.testButton);
@@ -448,7 +437,6 @@
         private Bunifu.Framework.UI.BunifuImageButton testButton;
         private Bunifu.Framework.UI.BunifuImageButton orderButton;
         private PanelPersonnel personnelScreen;
-        private PanelMap mapScreen;
     }
 }
 

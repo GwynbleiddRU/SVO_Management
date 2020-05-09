@@ -63,10 +63,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="Windows">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorizationForm.cs">
@@ -96,11 +98,11 @@
     <Compile Include="OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PanelMap.cs">
+    <Compile Include="MapControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PanelMap.Designer.cs">
-      <DependentUpon>PanelMap.cs</DependentUpon>
+    <Compile Include="MapControl.Designer.cs">
+      <DependentUpon>MapControl.cs</DependentUpon>
     </Compile>
     <Compile Include="PanelPersonnel.cs">
       <SubType>UserControl</SubType>
@@ -125,8 +127,8 @@
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PanelMap.resx">
-      <DependentUpon>PanelMap.cs</DependentUpon>
+    <EmbeddedResource Include="MapControl.resx">
+      <DependentUpon>MapControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelPersonnel.resx">
       <DependentUpon>PanelPersonnel.cs</DependentUpon>

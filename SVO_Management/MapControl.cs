@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SVO_Management
 {
-    public partial class PanelMap : UserControl
+    public partial class MapControl : UserControl
     {
-        public PanelMap()
+        public MapControl()
         {
             InitializeComponent();
         }
@@ -40,10 +40,10 @@ namespace SVO_Management
             gMapControl1.MarkersEnabled = true;
 
             //Указываем значение максимального приближения.
-            gMapControl1.MaxZoom = 18;
+            gMapControl1.MaxZoom = 16;
 
             //Указываем значение минимального приближения.
-            gMapControl1.MinZoom = 2;
+            gMapControl1.MinZoom = 14;
 
             //Устанавливаем центр приближения/удаления
             //курсор мыши.
@@ -73,9 +73,9 @@ namespace SVO_Management
             //соответствующим образом.
             gMapControl1.Dock = DockStyle.Fill;
 
-            //Указываем что будем использовать карты Google.
+            //Указываем что будем использовать карты Bing.
             gMapControl1.MapProvider =
-            GMap.NET.MapProviders.GMapProviders.GoogleMap;
+            GMap.NET.MapProviders.GMapProviders.BingMap;
             GMap.NET.GMaps.Instance.Mode =
             GMap.NET.AccessMode.ServerOnly;
 
@@ -85,8 +85,6 @@ namespace SVO_Management
             System.Net.WebRequest.GetSystemWebProxy();
             GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials =
             System.Net.CredentialCache.DefaultCredentials;
-
-
 
             gMapControl1.Position = new GMap.NET.PointLatLng(55.974247, 37.4058723);
         }

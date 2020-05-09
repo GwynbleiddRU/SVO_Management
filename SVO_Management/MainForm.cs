@@ -83,7 +83,6 @@ namespace SVO_Management
         private void MainForm_Load(object sender, EventArgs e)
         {
             GeoCoordinate coord = new GeoCoordinate();
-
         }
 
         private void testButton_Click(object sender, EventArgs e)

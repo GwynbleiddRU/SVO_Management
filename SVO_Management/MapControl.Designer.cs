@@ -1,6 +1,6 @@
 ﻿namespace SVO_Management
 {
-    partial class PanelMap
+    partial class MapControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -54,17 +54,17 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(561, 636);
+            this.gMapControl1.Size = new System.Drawing.Size(500, 500);
             this.gMapControl1.TabIndex = 3;
             this.gMapControl1.Zoom = 0D;
             // 
-            // PanelMap
+            // MapControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gMapControl1);
-            this.Name = "PanelMap";
-            this.Size = new System.Drawing.Size(1070, 636);
+            this.Name = "MapControl";
+            this.Size = new System.Drawing.Size(500, 500);
             this.Load += new System.EventHandler(this.PanelMap_Load);
             this.ResumeLayout(false);
 
