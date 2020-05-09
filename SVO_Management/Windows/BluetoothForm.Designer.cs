@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BluetoothForm));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.appName = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.exitButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.minimizeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.Elipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.deviceList = new System.Windows.Forms.ListView();
             this.listViewElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.stopButton = new Bunifu.Framework.UI.BunifuTileButton();
             this.startButton = new Bunifu.Framework.UI.BunifuTileButton();
-            this.exitButton = new Bunifu.Framework.UI.BunifuImageButton();
-            this.minimizeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exitButton)).BeginInit();
@@ -68,6 +68,34 @@
             this.appName.Size = new System.Drawing.Size(128, 36);
             this.appName.TabIndex = 2;
             this.appName.Text = "Bluetooth";
+            // 
+            // exitButton
+            // 
+            this.exitButton.BackColor = System.Drawing.Color.Transparent;
+            this.exitButton.Image = global::SVO_Management.Properties.Resources.iconClose;
+            this.exitButton.ImageActive = null;
+            this.exitButton.Location = new System.Drawing.Point(451, 12);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(35, 35);
+            this.exitButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exitButton.TabIndex = 1;
+            this.exitButton.TabStop = false;
+            this.exitButton.Zoom = 10;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.BackColor = System.Drawing.Color.Transparent;
+            this.minimizeButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizeButton.Image")));
+            this.minimizeButton.ImageActive = null;
+            this.minimizeButton.Location = new System.Drawing.Point(400, 12);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(35, 35);
+            this.minimizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.minimizeButton.TabIndex = 0;
+            this.minimizeButton.TabStop = false;
+            this.minimizeButton.Zoom = 10;
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // Elipse
             // 
@@ -137,34 +165,6 @@
             this.startButton.TabIndex = 4;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
-            // exitButton
-            // 
-            this.exitButton.BackColor = System.Drawing.Color.Transparent;
-            this.exitButton.Image = global::SVO_Management.Properties.Resources.iconClose;
-            this.exitButton.ImageActive = null;
-            this.exitButton.Location = new System.Drawing.Point(451, 12);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(35, 35);
-            this.exitButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.exitButton.TabIndex = 1;
-            this.exitButton.TabStop = false;
-            this.exitButton.Zoom = 10;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.BackColor = System.Drawing.Color.Transparent;
-            this.minimizeButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizeButton.Image")));
-            this.minimizeButton.ImageActive = null;
-            this.minimizeButton.Location = new System.Drawing.Point(400, 12);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(35, 35);
-            this.minimizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.minimizeButton.TabIndex = 0;
-            this.minimizeButton.TabStop = false;
-            this.minimizeButton.Zoom = 10;
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
-            // 
             // bunifuThinButton21
             // 
             this.bunifuThinButton21.ActiveBorderThickness = 1;
@@ -203,6 +203,7 @@
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BluetoothForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BluetoothForm";
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

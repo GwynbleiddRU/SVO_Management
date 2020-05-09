@@ -16,6 +16,8 @@ namespace SVO_Management
 {
     public partial class MainForm : Form
     {
+        public static List<Personnel> staff = new List<Personnel>();
+
         //BluetoothLEAdvertisementWatcher watcher = new BluetoothLEAdvertisementWatcher();         
 
         //static ThreadStart tStart;
@@ -78,6 +80,32 @@ namespace SVO_Management
                 menuAnimator.ShowSync(panelMenu);
             }
         }
+
+        private void menuSchemeButton_Click(object sender, EventArgs e)
+        {
+            personnelScreen.Visible = false;
+        }
+
+        private void menuPersonnelButton_Click(object sender, EventArgs e)
+        {
+            personnelScreen.Visible = true;
+        }
+
+        private void menuSettingsButton_Click(object sender, EventArgs e)
+        {
+            personnelScreen.Visible = false;
+        }
+
+        private void menuLogOutButton_Click(object sender, EventArgs e)
+        {
+            personnelScreen.Visible = false;
+        }
+
+        static void Refresh()
+        {
+
+        }
+
         #endregion Menu
 
         private void MainForm_Load(object sender, EventArgs e)

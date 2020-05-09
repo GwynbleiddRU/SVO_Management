@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.appName = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -115,22 +115,22 @@
             // 
             this.menuAnimator.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.menuAnimator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.menuAnimator.DefaultAnimation = animation1;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.menuAnimator.DefaultAnimation = animation4;
             // 
             // orderButton
             // 
@@ -204,6 +204,7 @@
             this.menuLogOutButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.menuLogOutButton.Textcolor = System.Drawing.Color.White;
             this.menuLogOutButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuLogOutButton.Click += new System.EventHandler(this.menuLogOutButton_Click);
             // 
             // menuSchemeButton
             // 
@@ -240,6 +241,7 @@
             this.menuSchemeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.menuSchemeButton.Textcolor = System.Drawing.Color.White;
             this.menuSchemeButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuSchemeButton.Click += new System.EventHandler(this.menuSchemeButton_Click);
             // 
             // menuPersonnelButton
             // 
@@ -276,6 +278,7 @@
             this.menuPersonnelButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.menuPersonnelButton.Textcolor = System.Drawing.Color.White;
             this.menuPersonnelButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPersonnelButton.Click += new System.EventHandler(this.menuPersonnelButton_Click);
             // 
             // menuSettingsButton
             // 
@@ -312,6 +315,7 @@
             this.menuSettingsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.menuSettingsButton.Textcolor = System.Drawing.Color.White;
             this.menuSettingsButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuSettingsButton.Click += new System.EventHandler(this.menuSettingsButton_Click);
             // 
             // menuButton
             // 

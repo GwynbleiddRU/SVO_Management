@@ -8,9 +8,12 @@ namespace SVO_Management.Graphs
 {
     class Node
     {
-        public Node()
+        private int CoordX;
+        private int CoordY;
+        public Node(int x, int y)
         {
-           
+            CoordX = x;
+            CoordY = y;
         }
     }
 }
