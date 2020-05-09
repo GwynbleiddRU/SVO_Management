@@ -117,35 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bluetoothOffIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bluetoothOffIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="TextBoxElipse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="minimizeButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAABElJREFUeF7t2zGqbuUZhuETcQSCVpmAYhsxhU5DO02EOAEthUBqtbHJKBRbxU4s
+        JaNIOjttErbf6m9+/l2cswnP9cLV3P0Dq1jfs4eHB2BURmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBDRmBD
+        RmBDRmBDRmBDRmBDRmBDxkd4+Xjj+Mvx2fF34Lm7tnZt7tretcHa5l0yPsJbx1fHD8fPx7+A5+7a2rW5
+        a3t/Omqbd8l4h5eOPx7/PP53OOde/P33uDZ4bfHaZG31pox3ePX44PjlcM493V0bvLZ4bbK2elPGO7x7
+        XJ8fzrmnv2uL7xy11Zsy3uHj49vDOff0d23xb0dt9aaMd/j0+P5wzj39fXd8ctRWb8p4h4+Orw/n3NPf
+        tcW/HrXVmzLe4c/Hl4dz7unv2uLbR231pox3eOV4//jP4Zx7uvv38d5xbbK2elPGO/zheO344vjtcM69
+        +Pv1+Py4tnhtsrZ6U8ZHePP4x/HN8ePxE/DcXVu7Nndt79pgbfMuGR/h+g/59ePDw1sAeDGurV2bu7b3
+        pG8BgP9jGYENGYENGYENGYENGYENGYENGYENGYENGYENGYENGYENGYENGYENGYENGYENGYENGYENGYEN
+        GYENGYENGYENGYENGYENGYENGYENGYENGYEFD89+B1DkZAC7sU3hAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="bluetoothOnIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bluetoothOnIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logInButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAPAAAAA3CAYAAAAyuMeeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGTSURBVHhe7dahrWJRFIXhaQOHQ+JwOCQORwV0gMNRAQ5H
+        Bzgc7rorqYAOcLgz2ZfMS96EAu5KvpV8bh/5J+fPZDJpQCYBQzABQzABQzABQzABQ7BfAe92u9Z1XTOz
+        ca76PB6PbTqd/g74dru16/XaNpvNT9DAuFSfp9Op9X0/RDwEvN/v2+Vy+foAGJ9/zQ4BPx6Ptlqtvh4C
+        4zObzdrr9foEXPv/ABi3moAhVE3AEKomYAhVEzCEqgkYQtUEDKFqAoZQNQFDqJqAIVRNwBCqJmAIVRMw
+        hKoJGELVBAyhagKGUDUBQ6iagCFUTcAQqiZgCFUTMISqCRhC1QQMoWoChlA1AUOomoAhVE3AEKomYAhV
+        EzCEqgkYQtUEDKFqAoZQNQFDqJqAIVRNwBCqJmAIVRsCfj6fbbFYfD0Cxmc6nbb3+/0J+Hw+t8Ph8PUQ
+        GJ/NZtO6rvsEPJvN2uPxaNvt9usxMB7r9XrodblcfgIu8/m83e/34V9tZuNd3/dDvNXtT8BAHgFDMAFD
+        MAFDMAFDrEn7C3qPUAi2JdPOAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="iconClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconClose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bunifuThinButton21.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAPAAAAA3CAYAAAAyuMeeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGTSURBVHhe7dahrWJRFIXhaQOHQ+JwOCQORwV0gMNRAQ5H
+        Bzgc7rorqYAOcLgz2ZfMS96EAu5KvpV8bh/5J+fPZDJpQCYBQzABQzABQzABQzABQ7BfAe92u9Z1XTOz
+        ca76PB6PbTqd/g74dru16/XaNpvNT9DAuFSfp9Op9X0/RDwEvN/v2+Vy+foAGJ9/zQ4BPx6Ptlqtvh4C
+        4zObzdrr9foEXPv/ABi3moAhVE3AEKomYAhVEzCEqgkYQtUEDKFqAoZQNQFDqJqAIVRNwBCqJmAIVRMw
+        hKoJGELVBAyhagKGUDUBQ6iagCFUTcAQqiZgCFUTMISqCRhC1QQMoWoChlA1AUOomoAhVE3AEKomYAhV
+        EzCEqgkYQtUEDKFqAoZQNQFDqJqAIVRNwBCqJmAIVRsCfj6fbbFYfD0Cxmc6nbb3+/0J+Hw+t8Ph8PUQ
+        GJ/NZtO6rvsEPJvN2uPxaNvt9usxMB7r9XrodblcfgIu8/m83e/34V9tZuNd3/dDvNXtT8BAHgFDMAFD
+        MAFDMAFDrEn7C3qPUAi2JdPOAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="iconLogOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconLogOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconMap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconMaximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconMaximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconMinimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconMinimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconPersonnel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconPersonnel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconSettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconSettings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="Elipse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>334, 17</value>
+  </metadata>
+  <metadata name="DragControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>434, 17</value>
+  </metadata>
 </root>

@@ -51,7 +51,7 @@ namespace SVO_Management
 
         private void WatcherOnReceived(BluetoothLEAdvertisementWatcher sender, BluetoothLEAdvertisementReceivedEventArgs btAdv)
         {
-            MessageBox.Show(String.Format(btAdv.AdvertisementType.ToString() + " " + btAdv.BluetoothAddress.ToString() + " " + btAdv.Advertisement.ToString()));
+            MessageBox.Show(btAdv.BluetoothAddress.ToString() + " " + btAdv.Advertisement.ManufacturerData.ToString() + " " + btAdv.Advertisement.LocalName.ToString());
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace SVO_Management
             deviceList.Items.Add("Searching...");
 
             //var watcher = new BluetoothLEAdvertisementWatcher();
-            watcher.Received += BeaconData.Watcher_Received;
+            watcher.Received += WatcherOnReceived;
             //Task.Delay(500);
         }
     }

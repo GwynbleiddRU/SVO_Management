@@ -10,9 +10,7 @@ namespace SVO_Management.Graphs
     {
         public Node()
         {
-            int a = 5;
-
-            int b = 'a';
+           
         }
     }
 }

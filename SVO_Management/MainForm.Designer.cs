@@ -46,6 +46,7 @@
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.menuAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.testButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.orderButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maximizeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitButton)).BeginInit();
@@ -53,6 +54,7 @@
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -347,7 +349,7 @@
             this.menuAnimator.SetDecoration(this.testButton, BunifuAnimatorNS.DecorationType.None);
             this.testButton.Image = ((System.Drawing.Image)(resources.GetObject("testButton.Image")));
             this.testButton.ImageActive = null;
-            this.testButton.Location = new System.Drawing.Point(707, 322);
+            this.testButton.Location = new System.Drawing.Point(600, 304);
             this.testButton.Name = "testButton";
             this.testButton.Size = new System.Drawing.Size(84, 81);
             this.testButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -356,12 +358,31 @@
             this.testButton.Zoom = 10;
             this.testButton.Click += new System.EventHandler(this.testButton_Click);
             // 
+            // orderButton
+            // 
+            this.orderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.orderButton.BackColor = System.Drawing.Color.Transparent;
+            this.menuAnimator.SetDecoration(this.orderButton, BunifuAnimatorNS.DecorationType.None);
+            this.orderButton.Image = ((System.Drawing.Image)(resources.GetObject("orderButton.Image")));
+            this.orderButton.ImageActive = null;
+            this.orderButton.Location = new System.Drawing.Point(749, 304);
+            this.orderButton.Name = "orderButton";
+            this.orderButton.Size = new System.Drawing.Size(84, 81);
+            this.orderButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.orderButton.TabIndex = 7;
+            this.orderButton.TabStop = false;
+            this.orderButton.Zoom = 10;
+            this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1140, 696);
+            this.Controls.Add(this.orderButton);
             this.Controls.Add(this.testButton);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelHeader);
@@ -380,6 +401,7 @@
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,6 +423,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton menuPersonnelButton;
         private Bunifu.Framework.UI.BunifuImageButton maximizeButton;
         private Bunifu.Framework.UI.BunifuImageButton testButton;
+        private Bunifu.Framework.UI.BunifuImageButton orderButton;
     }
 }
 

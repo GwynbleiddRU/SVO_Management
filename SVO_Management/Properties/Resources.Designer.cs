@@ -63,6 +63,26 @@ namespace SVO_Management.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bluetoothOffIcon {
+            get {
+                object obj = ResourceManager.GetObject("bluetoothOffIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bluetoothOnIcon {
+            get {
+                object obj = ResourceManager.GetObject("bluetoothOnIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconClose {
             get {
                 object obj = ResourceManager.GetObject("iconClose", resourceCulture);

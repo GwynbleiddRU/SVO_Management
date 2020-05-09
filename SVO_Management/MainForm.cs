@@ -91,5 +91,11 @@ namespace SVO_Management
             BluetoothForm bluetooth = new BluetoothForm();
             bluetooth.Show();
         }
+
+        private void orderButton_Click(object sender, EventArgs e)
+        {
+            OrderForm order = new OrderForm();
+            order.Show();
+        }
     }
 }
