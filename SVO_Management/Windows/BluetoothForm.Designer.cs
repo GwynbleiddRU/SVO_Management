@@ -41,6 +41,7 @@
             this.stopButton = new Bunifu.Framework.UI.BunifuTileButton();
             this.startButton = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.searchCircleProgressbar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exitButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeButton)).BeginInit();
@@ -49,6 +50,7 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
+            this.panelHeader.Controls.Add(this.searchCircleProgressbar);
             this.panelHeader.Controls.Add(this.appName);
             this.panelHeader.Controls.Add(this.exitButton);
             this.panelHeader.Controls.Add(this.minimizeButton);
@@ -63,7 +65,7 @@
             this.appName.AutoSize = true;
             this.appName.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.appName.ForeColor = System.Drawing.Color.White;
-            this.appName.Location = new System.Drawing.Point(12, 12);
+            this.appName.Location = new System.Drawing.Point(55, 11);
             this.appName.Name = "appName";
             this.appName.Size = new System.Drawing.Size(128, 36);
             this.appName.TabIndex = 2;
@@ -138,7 +140,7 @@
             this.stopButton.ImageZoom = 50;
             this.stopButton.LabelPosition = 24;
             this.stopButton.LabelText = "Stop";
-            this.stopButton.Location = new System.Drawing.Point(396, 237);
+            this.stopButton.Location = new System.Drawing.Point(396, 226);
             this.stopButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(88, 85);
@@ -158,7 +160,7 @@
             this.startButton.ImageZoom = 50;
             this.startButton.LabelPosition = 24;
             this.startButton.LabelText = "Search";
-            this.startButton.Location = new System.Drawing.Point(396, 95);
+            this.startButton.Location = new System.Drawing.Point(396, 114);
             this.startButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(88, 85);
@@ -190,6 +192,27 @@
             this.bunifuThinButton21.TabIndex = 15;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // searchCircleProgressbar
+            // 
+            this.searchCircleProgressbar.animated = true;
+            this.searchCircleProgressbar.animationIterval = 1;
+            this.searchCircleProgressbar.animationSpeed = 1;
+            this.searchCircleProgressbar.BackColor = System.Drawing.Color.Transparent;
+            this.searchCircleProgressbar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchCircleProgressbar.BackgroundImage")));
+            this.searchCircleProgressbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.searchCircleProgressbar.ForeColor = System.Drawing.Color.Transparent;
+            this.searchCircleProgressbar.LabelVisible = false;
+            this.searchCircleProgressbar.LineProgressThickness = 4;
+            this.searchCircleProgressbar.LineThickness = 4;
+            this.searchCircleProgressbar.Location = new System.Drawing.Point(9, 8);
+            this.searchCircleProgressbar.MaxValue = 100;
+            this.searchCircleProgressbar.Name = "searchCircleProgressbar";
+            this.searchCircleProgressbar.ProgressBackColor = System.Drawing.Color.Transparent;
+            this.searchCircleProgressbar.ProgressColor = System.Drawing.Color.White;
+            this.searchCircleProgressbar.Size = new System.Drawing.Size(45, 45);
+            this.searchCircleProgressbar.TabIndex = 16;
+            this.searchCircleProgressbar.Value = 0;
+            // 
             // BluetoothForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -205,6 +228,7 @@
             this.Name = "BluetoothForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BluetoothForm";
+            this.Load += new System.EventHandler(this.BluetoothForm_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exitButton)).EndInit();
@@ -226,5 +250,6 @@
         private Bunifu.Framework.UI.BunifuDragControl DragControl;
         private Bunifu.Framework.UI.BunifuElipse listViewElipse;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar searchCircleProgressbar;
     }
 }

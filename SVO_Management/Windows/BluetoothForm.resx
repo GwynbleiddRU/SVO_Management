@@ -164,4 +164,11 @@
   <metadata name="listViewElipse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>642, 17</value>
   </metadata>
+  <data name="searchCircleProgressbar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAAfSURBVGhD7cExAQAAAMKg9U9tDQ8gAAAAAAAAAOBNDR/R
+        AAEPAmGpAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

@@ -57,6 +57,8 @@
             this.gMapControl1.Size = new System.Drawing.Size(500, 500);
             this.gMapControl1.TabIndex = 3;
             this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.OnMarkerClick += new GMap.NET.WindowsForms.MarkerClick(this.gMapControl1_OnMarkerClick);
+            this.gMapControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseClick);
             // 
             // MapControl
             // 
@@ -72,6 +74,6 @@
 
         #endregion
 
-        private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        public GMap.NET.WindowsForms.GMapControl gMapControl1;
     }
 }

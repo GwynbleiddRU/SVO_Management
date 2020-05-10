@@ -12,6 +12,8 @@ namespace SVO_Management
 {
     public partial class PanelPersonnel : UserControl
     {
+        public Personnel curPersonnel;
+
         public PanelPersonnel()
         {
             InitializeComponent();
@@ -36,12 +38,23 @@ namespace SVO_Management
                 int id = personnel.ID;
 
                 if (type == Personnel.Type.Engineer)
-                    imageKey = "staffEngineerIcon.png";
+                    imageKey = "personnelEngineerIcon.png";
                 else if (type == Personnel.Type.Carrier)
-                    imageKey = "staffLuggageIcon.png";
+                    imageKey = "personnelCarrierIcon.png";
+                else if (type == Personnel.Type.Assistant)
+                    imageKey = "personnelAssistantIcon.png";
+                else if (type == Personnel.Type.Police)
+                    imageKey = "personnelPoliceIcon.png";
+
 
                 personnelList.Items.Add(id.ToString(), name, imageKey);
             }
+        }
+
+        private void personnelList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Personnel p = (from x in MainForm.staff where x.Coord == item select x).First();
+            //curPersonnel = p;
         }
     }
 }

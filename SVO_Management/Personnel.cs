@@ -19,15 +19,15 @@ namespace SVO_Management
         public int ID;
         public string Name;
         public Type Class;
-        public GeoCoordinate Coord;
+        public GMap.NET.WindowsForms.Markers.GMarkerGoogle Coord;
 
-        public Personnel(string name, Type class_w, GeoCoordinate coord)
+        public Personnel(string name, Type class_w, GMap.NET.WindowsForms.Markers.GMarkerGoogle coord)
         {
             Name = name;
             Class = class_w;
             Coord = coord;
         }
-        public void UpdateCoord(GeoCoordinate coord)
+        public void UpdateCoord(GMap.NET.WindowsForms.Markers.GMarkerGoogle coord)
         {
             Coord = coord;
         }

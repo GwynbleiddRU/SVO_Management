@@ -163,6 +163,46 @@ namespace SVO_Management.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap personnelAssistantIcon {
+            get {
+                object obj = ResourceManager.GetObject("personnelAssistantIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap personnelCarrierIcon {
+            get {
+                object obj = ResourceManager.GetObject("personnelCarrierIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap personnelEngineerIcon {
+            get {
+                object obj = ResourceManager.GetObject("personnelEngineerIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap personnelPoliceIcon {
+            get {
+                object obj = ResourceManager.GetObject("personnelPoliceIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap staffEngineerIcon {
             get {
                 object obj = ResourceManager.GetObject("staffEngineerIcon", resourceCulture);

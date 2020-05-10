@@ -7,18 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SVO_Management
 {
     public partial class MapControl : UserControl
     {
+        public Personnel curPersonnel;
+        public GMap.NET.WindowsForms.GMapOverlay markers = new GMap.NET.WindowsForms.GMapOverlay("markers");
+
         public MapControl()
         {
             InitializeComponent();
+
         }
 
         private void PanelMap_Load(object sender, EventArgs e)
         {
+            //добавление маркеров
+            gMapControl1.Overlays.Add(markers);
+
             //Настройки для компонента GMap.
             gMapControl1.Bearing = 0;
 
@@ -87,6 +95,33 @@ namespace SVO_Management
             System.Net.CredentialCache.DefaultCredentials;
 
             gMapControl1.Position = new GMap.NET.PointLatLng(55.974247, 37.4058723);
+        }
+
+        private void gMapControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                double lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
+                double lng = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
+                GMap.NET.WindowsForms.GMapMarker marker =
+                    new GMap.NET.WindowsForms.Markers.GMarkerGoogle(
+                        new GMap.NET.PointLatLng(lat, lng),
+                        GMap.NET.WindowsForms.Markers.GMarkerGoogleType.blue_pushpin);
+                markers.Markers.Add(marker);
+                marker.Tag = "warning";
+            }
+        }
+
+        public void gMapControl1_OnMarkerClick(GMap.NET.WindowsForms.GMapMarker item, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (item.Tag == null)
+                {
+                    Personnel p = (from x in MainForm.staff where x.Coord == item select x).First();
+                    curPersonnel = p;
+                }
+            }
         }
     }
 }
