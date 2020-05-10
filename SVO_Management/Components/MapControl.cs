@@ -99,10 +99,11 @@ namespace SVO_Management
 
         private void gMapControl1_MouseClick(object sender, MouseEventArgs e)
         {
+            double lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
+            double lng = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
+
             if (e.Button == MouseButtons.Right)
             {
-                double lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
-                double lng = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
                 GMap.NET.WindowsForms.GMapMarker marker =
                     new GMap.NET.WindowsForms.Markers.GMarkerGoogle(
                         new GMap.NET.PointLatLng(lat, lng),

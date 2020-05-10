@@ -21,11 +21,6 @@ namespace SVO_Management
 
         private void PanelPersonnel_Load(object sender, EventArgs e)
         {
-            Personnel person = new Personnel("Афанасьев Е.В.", Personnel.Type.Carrier, null);
-            MainForm.staff.Add(person);
-            Personnel person2 = new Personnel("Кошкин У.Г.", Personnel.Type.Engineer, null);
-            MainForm.staff.Add(person2);
-
             personnelList.Items.Clear();
             personnelList.SmallImageList = personnelIcons;
 
@@ -46,15 +41,22 @@ namespace SVO_Management
                 else if (type == Personnel.Type.Police)
                     imageKey = "personnelPoliceIcon.png";
 
-
                 personnelList.Items.Add(id.ToString(), name, imageKey);
             }
         }
 
-        private void personnelList_SelectedIndexChanged(object sender, EventArgs e)
+        private void personnelList_MouseClick(object sender, MouseEventArgs e)
         {
-            //Personnel p = (from x in MainForm.staff where x.Coord == item select x).First();
-            //curPersonnel = p;
+            if (e.Button == MouseButtons.Left)
+            {
+                if (personnelList.FocusedItem.Bounds.Contains(e.Location))
+                {
+                    int id = Convert.ToInt32(personnelList.FocusedItem.Name);
+                    curPersonnel = MainForm.staff.Where(x => x.ID == id).First();
+                }
+                else
+                    return;
+            }
         }
     }
 }

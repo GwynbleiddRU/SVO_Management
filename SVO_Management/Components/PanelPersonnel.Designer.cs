@@ -33,14 +33,17 @@
             this.personnelList = new System.Windows.Forms.ListView();
             this.PersonnelColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.personnelIcons = new System.Windows.Forms.ImageList(this.components);
-            this.mapControl1 = new SVO_Management.MapControl();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.personnelYCordLabel = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.personnelXCordLabel = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.requestButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.personnelTypeLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.personnelNameLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.personnelAreaLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.mapControl1 = new SVO_Management.MapControl();
+            this.locationTitleLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // personnelList
@@ -61,7 +64,7 @@
             this.personnelList.TabIndex = 1;
             this.personnelList.UseCompatibleStateImageBehavior = false;
             this.personnelList.View = System.Windows.Forms.View.Details;
-            this.personnelList.SelectedIndexChanged += new System.EventHandler(this.personnelList_SelectedIndexChanged);
+            this.personnelList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.personnelList_MouseClick);
             // 
             // PersonnelColumn
             // 
@@ -77,20 +80,14 @@
             this.personnelIcons.Images.SetKeyName(2, "personnelEngineerIcon.png");
             this.personnelIcons.Images.SetKeyName(3, "personnelPoliceIcon.png");
             // 
-            // mapControl1
-            // 
-            this.mapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mapControl1.Location = new System.Drawing.Point(0, 0);
-            this.mapControl1.Name = "mapControl1";
-            this.mapControl1.Size = new System.Drawing.Size(786, 536);
-            this.mapControl1.TabIndex = 0;
-            // 
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
+            this.panelInfo.Controls.Add(this.locationTitleLabel);
+            this.panelInfo.Controls.Add(this.personnelAreaLabel);
+            this.panelInfo.Controls.Add(this.bunifuImageButton1);
             this.panelInfo.Controls.Add(this.personnelYCordLabel);
             this.panelInfo.Controls.Add(this.personnelXCordLabel);
-            this.panelInfo.Controls.Add(this.requestButton);
             this.panelInfo.Controls.Add(this.personnelTypeLabel);
             this.panelInfo.Controls.Add(this.personnelNameLabel);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -101,6 +98,7 @@
             // 
             // personnelYCordLabel
             // 
+            this.personnelYCordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.personnelYCordLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
             this.personnelYCordLabel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
             this.personnelYCordLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -114,6 +112,7 @@
             // 
             // personnelXCordLabel
             // 
+            this.personnelXCordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.personnelXCordLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
             this.personnelXCordLabel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
             this.personnelXCordLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -125,34 +124,9 @@
             this.personnelXCordLabel.Size = new System.Drawing.Size(270, 24);
             this.personnelXCordLabel.TabIndex = 15;
             // 
-            // requestButton
-            // 
-            this.requestButton.ActiveBorderThickness = 1;
-            this.requestButton.ActiveCornerRadius = 20;
-            this.requestButton.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
-            this.requestButton.ActiveForecolor = System.Drawing.Color.White;
-            this.requestButton.ActiveLineColor = System.Drawing.Color.White;
-            this.requestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.requestButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
-            this.requestButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("requestButton.BackgroundImage")));
-            this.requestButton.ButtonText = "Ask to move";
-            this.requestButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.requestButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestButton.ForeColor = System.Drawing.Color.White;
-            this.requestButton.IdleBorderThickness = 1;
-            this.requestButton.IdleCornerRadius = 7;
-            this.requestButton.IdleFillColor = System.Drawing.Color.Transparent;
-            this.requestButton.IdleForecolor = System.Drawing.Color.White;
-            this.requestButton.IdleLineColor = System.Drawing.Color.White;
-            this.requestButton.Location = new System.Drawing.Point(591, 15);
-            this.requestButton.Margin = new System.Windows.Forms.Padding(5);
-            this.requestButton.Name = "requestButton";
-            this.requestButton.Size = new System.Drawing.Size(174, 67);
-            this.requestButton.TabIndex = 14;
-            this.requestButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // personnelTypeLabel
             // 
+            this.personnelTypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.personnelTypeLabel.AutoSize = true;
             this.personnelTypeLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.personnelTypeLabel.ForeColor = System.Drawing.Color.White;
@@ -163,6 +137,7 @@
             // 
             // personnelNameLabel
             // 
+            this.personnelNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.personnelNameLabel.AutoSize = true;
             this.personnelNameLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.personnelNameLabel.ForeColor = System.Drawing.Color.White;
@@ -170,6 +145,50 @@
             this.personnelNameLabel.Name = "personnelNameLabel";
             this.personnelNameLabel.Size = new System.Drawing.Size(0, 25);
             this.personnelNameLabel.TabIndex = 6;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(696, 14);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(71, 71);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 17;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
+            // personnelAreaLabel
+            // 
+            this.personnelAreaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.personnelAreaLabel.AutoSize = true;
+            this.personnelAreaLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.personnelAreaLabel.ForeColor = System.Drawing.Color.White;
+            this.personnelAreaLabel.Location = new System.Drawing.Point(680, 61);
+            this.personnelAreaLabel.Name = "personnelAreaLabel";
+            this.personnelAreaLabel.Size = new System.Drawing.Size(0, 25);
+            this.personnelAreaLabel.TabIndex = 18;
+            // 
+            // mapControl1
+            // 
+            this.mapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mapControl1.Location = new System.Drawing.Point(0, 0);
+            this.mapControl1.Name = "mapControl1";
+            this.mapControl1.Size = new System.Drawing.Size(786, 536);
+            this.mapControl1.TabIndex = 0;
+            // 
+            // locationTitleLabel
+            // 
+            this.locationTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.locationTitleLabel.AutoSize = true;
+            this.locationTitleLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.locationTitleLabel.ForeColor = System.Drawing.Color.White;
+            this.locationTitleLabel.Location = new System.Drawing.Point(680, 22);
+            this.locationTitleLabel.Name = "locationTitleLabel";
+            this.locationTitleLabel.Size = new System.Drawing.Size(0, 25);
+            this.locationTitleLabel.TabIndex = 19;
             // 
             // PanelPersonnel
             // 
@@ -184,6 +203,7 @@
             this.Load += new System.EventHandler(this.PanelPersonnel_Load);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,14 +211,16 @@
         #endregion
 
         public MapControl mapControl1;
-        private System.Windows.Forms.ListView personnelList;
+        public System.Windows.Forms.ListView personnelList;
         private System.Windows.Forms.ImageList personnelIcons;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.ColumnHeader PersonnelColumn;
-        private Bunifu.Framework.UI.BunifuThinButton2 requestButton;
         public Bunifu.Framework.UI.BunifuCustomLabel personnelTypeLabel;
         public Bunifu.Framework.UI.BunifuCustomLabel personnelNameLabel;
         public WindowsFormsControlLibrary1.BunifuCustomTextbox personnelXCordLabel;
         public WindowsFormsControlLibrary1.BunifuCustomTextbox personnelYCordLabel;
+        public Bunifu.Framework.UI.BunifuCustomLabel personnelAreaLabel;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        public Bunifu.Framework.UI.BunifuCustomLabel locationTitleLabel;
     }
 }

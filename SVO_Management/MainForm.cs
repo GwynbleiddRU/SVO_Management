@@ -20,12 +20,6 @@ namespace SVO_Management
     {
         public static List<Personnel> staff = new List<Personnel>();
 
-        //BluetoothLEAdvertisementWatcher watcher = new BluetoothLEAdvertisementWatcher();         
-
-        //static ThreadStart tStart;
-        //Thread thread => new Thread(watcher.Start());
-
-
         public MainForm()
         {
             AuthorizationForm Authorization = new AuthorizationForm();
@@ -38,17 +32,101 @@ namespace SVO_Management
             //watcher.Received += BeaconData.Watcher_Received;
             SetPersonal();
 
-            personnelScreen.mapControl1.gMapControl1.OnMarkerClick += UpdatePersonnelInfo;
+            personnelScreen.mapControl1.gMapControl1.OnMarkerClick += UpdatePersonnelInfoMarker;
+            personnelScreen.personnelList.MouseClick += UpdatePersonnelInfoListView;
         }
 
-        public void UpdatePersonnelInfo(object sender, EventArgs e)
+        #region PanelPersonnel
+        public void SetPersonal()
+        {
+            string[] serverData = File.ReadAllLines(Environment.CurrentDirectory + "\\testCoords.txt");
+            foreach (string dataRow in serverData)
+            {
+                Bitmap bm = null;
+                Personnel psn = null;
+                GMap.NET.WindowsForms.Markers.GMarkerGoogle marker = null;
+
+                int id = int.Parse(dataRow.Split(' ')[0]);
+                //string name = dataRow.Split('"')[0];
+
+                string name = dataRow.Remove(0, dataRow.IndexOf('"') + 1);
+                name = name.Remove(name.LastIndexOf('"'));
+
+
+                double x = double.Parse(dataRow.Split(' ')[1].Trim(','));
+                double y = double.Parse(dataRow.Split(' ')[2]);
+
+                //Personnel.Type type;
+
+                switch (dataRow.Split(' ')[3])
+                {
+                    case "Engineer":
+                        //type = Personnel.Type.Engineer;
+
+                        bm = new Bitmap(Properties.Resources.personnelEngineerIcon, new Size(35, 35));
+                        marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new GMap.NET.PointLatLng(x, y), bm);
+                        marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                        psn = new Personnel(id, name, Personnel.Type.Engineer, marker);
+                        marker.ToolTipText = psn.Name;
+                        break;
+                    case "Assistant":
+                        //type = Personnel.Type.Assistant;
+
+                        bm = new Bitmap(Properties.Resources.personnelAssistantIcon, new Size(35, 35));
+                        marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new GMap.NET.PointLatLng(x, y), bm);
+                        marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                        psn = new Personnel(id, name, Personnel.Type.Assistant, marker);
+                        marker.ToolTipText = psn.Name;
+                        break;
+                    case "Carrier":
+                        //type = Personnel.Type.Carrier;
+
+                        bm = new Bitmap(Properties.Resources.personnelCarrierIcon, new Size(35, 35));
+                        marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new GMap.NET.PointLatLng(x, y), bm);
+                        marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                        psn = new Personnel(id, name, Personnel.Type.Carrier, marker);
+                        marker.ToolTipText = psn.Name;
+                        break;
+                    case "Police":
+                        //type = Personnel.Type.Police;
+
+                        bm = new Bitmap(Properties.Resources.personnelPoliceIcon, new Size(35, 35));
+                        marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new GMap.NET.PointLatLng(x, y), bm);
+                        marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                        psn = new Personnel(id, name, Personnel.Type.Police, marker);
+                        marker.ToolTipText = psn.Name;
+                        break;
+                }
+
+                staff.Add(psn);
+                personnelScreen.mapControl1.markers.Markers.Add(marker);
+            }
+        }
+
+        public void UpdatePersonnelInfoMarker(object sender, EventArgs e)
         {
             Personnel p = personnelScreen.mapControl1.curPersonnel;
             personnelScreen.personnelNameLabel.Text = "Name: " + p.Name;
             personnelScreen.personnelTypeLabel.Text = "Class: " + p.Class.ToString();
             personnelScreen.personnelXCordLabel.Text = "Latitude: " + p.Coord.Position.Lat.ToString();
             personnelScreen.personnelYCordLabel.Text = "Longitude: " + p.Coord.Position.Lng.ToString();
+
+            personnelScreen.locationTitleLabel.Text = "Локация: ";
+            personnelScreen.personnelAreaLabel.Text = Territory.Check(p.Coord.Position.Lat, p.Coord.Position.Lng);
         }
+
+        public void UpdatePersonnelInfoListView(object sender, EventArgs e)
+        {
+            Personnel p = personnelScreen.curPersonnel;
+            personnelScreen.personnelNameLabel.Text = "Name: " + p.Name;
+            personnelScreen.personnelTypeLabel.Text = "Class: " + p.Class.ToString();
+            personnelScreen.personnelXCordLabel.Text = "Latitude: " + p.Coord.Position.Lat.ToString();
+            personnelScreen.personnelYCordLabel.Text = "Longitude: " + p.Coord.Position.Lng.ToString();
+
+            personnelScreen.locationTitleLabel.Text = "Локация: ";
+            personnelScreen.personnelAreaLabel.Text = Territory.Check(p.Coord.Position.Lat, p.Coord.Position.Lng);
+        }
+        #endregion PanelPersonnel
 
         #region PanelHeader
         private void exitButton_Click(object sender, EventArgs e)
@@ -137,61 +215,6 @@ namespace SVO_Management
         {
             OrderForm order = new OrderForm();
             order.Show();
-        }
-
-        public void SetPersonal()
-        {
-            string[] s = File.ReadAllLines(Environment.CurrentDirectory + "\\testCoords.txt");
-            int next = 1;
-            foreach (string a in s)
-            {
-                Bitmap bm = null;
-                double x = double.Parse(a.Split(' ')[0].Trim(','));
-                double y = double.Parse(a.Split(' ')[1]);
-                Personnel psn = null;
-                GMap.NET.WindowsForms.Markers.GMarkerGoogle marker = null;
-                switch (next)
-                {
-                    case 1:
-                        bm = new Bitmap(Properties.Resources.personnelEngineerIcon, new Size(35, 35));
-                        marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new GMap.NET.PointLatLng(x, y), bm);
-                        marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-                        psn = new Personnel("Сидоров Г.О.", Personnel.Type.Engineer, marker);
-                        marker.ToolTipText = psn.Name;
-                        next++;
-                        break;
-                    case 2:
-                        bm = new Bitmap(Properties.Resources.personnelAssistantIcon, new Size(35, 35));
-                        marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new GMap.NET.PointLatLng(x, y), bm);
-                        marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-                        psn = new Personnel("Иванов Г.О.", Personnel.Type.Assistant, marker);
-                        marker.ToolTipText = psn.Name; ;
-                        next++;
-                        break;
-                    case 3:
-                        bm = new Bitmap(Properties.Resources.personnelCarrierIcon, new Size(35, 35));
-                        marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new GMap.NET.PointLatLng(x, y), bm);
-                        marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-                        psn = new Personnel("Глебов Г.О.", Personnel.Type.Carrier, marker);
-                        marker.ToolTipText = psn.Name;
-                        next++;
-                        break;
-                    case 4:
-                        bm = new Bitmap(Properties.Resources.personnelPoliceIcon, new Size(35, 35));
-                        marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new GMap.NET.PointLatLng(x, y), bm);
-                        marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-                        psn = new Personnel("Носачев Г.О.", Personnel.Type.Police, marker);
-                        marker.ToolTipText = psn.Name;
-
-                        next = 1;
-                        break;
-                }
-                staff.Add(psn);
-
-
-                personnelScreen.mapControl1.markers.Markers.Add(marker);
-            }
-
         }
     }
 }

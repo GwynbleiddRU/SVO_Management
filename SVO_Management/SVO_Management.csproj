@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Personnel.cs" />
+    <Compile Include="Territory.cs" />
     <Compile Include="Windows\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -21,8 +21,9 @@ namespace SVO_Management
         public Type Class;
         public GMap.NET.WindowsForms.Markers.GMarkerGoogle Coord;
 
-        public Personnel(string name, Type class_w, GMap.NET.WindowsForms.Markers.GMarkerGoogle coord)
+        public Personnel(int id, string name, Type class_w, GMap.NET.WindowsForms.Markers.GMarkerGoogle coord)
         {
+            ID = id;
             Name = name;
             Class = class_w;
             Coord = coord;
