@@ -29,33 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.maximizeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.appName = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.exitButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.minimizeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.Elipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.menuAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.orderButton = new Bunifu.Framework.UI.BunifuImageButton();
-            this.testButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.menuLogOutButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuSchemeButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuPersonnelButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuSettingsButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuButton = new Bunifu.Framework.UI.BunifuImageButton();
-            this.maximizeButton = new Bunifu.Framework.UI.BunifuImageButton();
-            this.exitButton = new Bunifu.Framework.UI.BunifuImageButton();
-            this.minimizeButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Elipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.menuAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.personnelScreen = new SVO_Management.PanelPersonnel();
+            this.personnelBrowseScreen = new SVO_Management.Components.PanelPersonnelBrowse();
             this.panelHeader.SuspendLayout();
-            this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeButton)).BeginInit();
+            this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -72,6 +69,22 @@
             this.panelHeader.Size = new System.Drawing.Size(1140, 60);
             this.panelHeader.TabIndex = 0;
             // 
+            // maximizeButton
+            // 
+            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizeButton.BackColor = System.Drawing.Color.Transparent;
+            this.menuAnimator.SetDecoration(this.maximizeButton, BunifuAnimatorNS.DecorationType.None);
+            this.maximizeButton.Image = global::SVO_Management.Properties.Resources.iconMaximize;
+            this.maximizeButton.ImageActive = null;
+            this.maximizeButton.Location = new System.Drawing.Point(1051, 12);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.Size = new System.Drawing.Size(35, 35);
+            this.maximizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.maximizeButton.TabIndex = 3;
+            this.maximizeButton.TabStop = false;
+            this.maximizeButton.Zoom = 10;
+            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
+            // 
             // appName
             // 
             this.appName.AutoSize = true;
@@ -83,6 +96,38 @@
             this.appName.Size = new System.Drawing.Size(224, 36);
             this.appName.TabIndex = 2;
             this.appName.Text = "SVO Management";
+            // 
+            // exitButton
+            // 
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitButton.BackColor = System.Drawing.Color.Transparent;
+            this.menuAnimator.SetDecoration(this.exitButton, BunifuAnimatorNS.DecorationType.None);
+            this.exitButton.Image = global::SVO_Management.Properties.Resources.iconClose;
+            this.exitButton.ImageActive = null;
+            this.exitButton.Location = new System.Drawing.Point(1093, 12);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(35, 35);
+            this.exitButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exitButton.TabIndex = 1;
+            this.exitButton.TabStop = false;
+            this.exitButton.Zoom = 10;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton.BackColor = System.Drawing.Color.Transparent;
+            this.menuAnimator.SetDecoration(this.minimizeButton, BunifuAnimatorNS.DecorationType.None);
+            this.minimizeButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizeButton.Image")));
+            this.minimizeButton.ImageActive = null;
+            this.minimizeButton.Location = new System.Drawing.Point(1010, 12);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(35, 35);
+            this.minimizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.minimizeButton.TabIndex = 0;
+            this.minimizeButton.TabStop = false;
+            this.minimizeButton.Zoom = 10;
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // panelMenu
             // 
@@ -98,75 +143,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(350, 636);
             this.panelMenu.TabIndex = 1;
-            // 
-            // Elipse
-            // 
-            this.Elipse.ElipseRadius = 5;
-            this.Elipse.TargetControl = this;
-            // 
-            // DragControl
-            // 
-            this.DragControl.Fixed = true;
-            this.DragControl.Horizontal = true;
-            this.DragControl.TargetControl = this.panelHeader;
-            this.DragControl.Vertical = true;
-            // 
-            // menuAnimator
-            // 
-            this.menuAnimator.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
-            this.menuAnimator.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.menuAnimator.DefaultAnimation = animation4;
-            // 
-            // orderButton
-            // 
-            this.orderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.orderButton.BackColor = System.Drawing.Color.Transparent;
-            this.menuAnimator.SetDecoration(this.orderButton, BunifuAnimatorNS.DecorationType.None);
-            this.orderButton.Image = ((System.Drawing.Image)(resources.GetObject("orderButton.Image")));
-            this.orderButton.ImageActive = null;
-            this.orderButton.Location = new System.Drawing.Point(749, 304);
-            this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(84, 81);
-            this.orderButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.orderButton.TabIndex = 7;
-            this.orderButton.TabStop = false;
-            this.orderButton.Zoom = 10;
-            this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
-            // 
-            // testButton
-            // 
-            this.testButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.testButton.BackColor = System.Drawing.Color.Transparent;
-            this.menuAnimator.SetDecoration(this.testButton, BunifuAnimatorNS.DecorationType.None);
-            this.testButton.Image = ((System.Drawing.Image)(resources.GetObject("testButton.Image")));
-            this.testButton.ImageActive = null;
-            this.testButton.Location = new System.Drawing.Point(600, 304);
-            this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(84, 81);
-            this.testButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.testButton.TabIndex = 6;
-            this.testButton.TabStop = false;
-            this.testButton.Zoom = 10;
-            this.testButton.Click += new System.EventHandler(this.testButton_Click);
             // 
             // menuLogOutButton
             // 
@@ -333,53 +309,38 @@
             this.menuButton.Zoom = 10;
             this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
-            // maximizeButton
+            // Elipse
             // 
-            this.maximizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeButton.BackColor = System.Drawing.Color.Transparent;
-            this.menuAnimator.SetDecoration(this.maximizeButton, BunifuAnimatorNS.DecorationType.None);
-            this.maximizeButton.Image = global::SVO_Management.Properties.Resources.iconMaximize;
-            this.maximizeButton.ImageActive = null;
-            this.maximizeButton.Location = new System.Drawing.Point(1051, 12);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.Size = new System.Drawing.Size(35, 35);
-            this.maximizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.maximizeButton.TabIndex = 3;
-            this.maximizeButton.TabStop = false;
-            this.maximizeButton.Zoom = 10;
-            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
+            this.Elipse.ElipseRadius = 5;
+            this.Elipse.TargetControl = this;
             // 
-            // exitButton
+            // DragControl
             // 
-            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.exitButton.BackColor = System.Drawing.Color.Transparent;
-            this.menuAnimator.SetDecoration(this.exitButton, BunifuAnimatorNS.DecorationType.None);
-            this.exitButton.Image = global::SVO_Management.Properties.Resources.iconClose;
-            this.exitButton.ImageActive = null;
-            this.exitButton.Location = new System.Drawing.Point(1093, 12);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(35, 35);
-            this.exitButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.exitButton.TabIndex = 1;
-            this.exitButton.TabStop = false;
-            this.exitButton.Zoom = 10;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.DragControl.Fixed = true;
+            this.DragControl.Horizontal = true;
+            this.DragControl.TargetControl = this.panelHeader;
+            this.DragControl.Vertical = true;
             // 
-            // minimizeButton
+            // menuAnimator
             // 
-            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton.BackColor = System.Drawing.Color.Transparent;
-            this.menuAnimator.SetDecoration(this.minimizeButton, BunifuAnimatorNS.DecorationType.None);
-            this.minimizeButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizeButton.Image")));
-            this.minimizeButton.ImageActive = null;
-            this.minimizeButton.Location = new System.Drawing.Point(1010, 12);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(35, 35);
-            this.minimizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.minimizeButton.TabIndex = 0;
-            this.minimizeButton.TabStop = false;
-            this.minimizeButton.Zoom = 10;
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            this.menuAnimator.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
+            this.menuAnimator.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.menuAnimator.DefaultAnimation = animation2;
             // 
             // personnelScreen
             // 
@@ -391,6 +352,15 @@
             this.personnelScreen.Size = new System.Drawing.Size(790, 636);
             this.personnelScreen.TabIndex = 8;
             // 
+            // personnelBrowseScreen
+            // 
+            this.menuAnimator.SetDecoration(this.personnelBrowseScreen, BunifuAnimatorNS.DecorationType.None);
+            this.personnelBrowseScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.personnelBrowseScreen.Location = new System.Drawing.Point(350, 60);
+            this.personnelBrowseScreen.Name = "personnelBrowseScreen";
+            this.personnelBrowseScreen.Size = new System.Drawing.Size(790, 636);
+            this.personnelBrowseScreen.TabIndex = 9;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -398,8 +368,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1140, 696);
             this.Controls.Add(this.personnelScreen);
-            this.Controls.Add(this.orderButton);
-            this.Controls.Add(this.testButton);
+            this.Controls.Add(this.personnelBrowseScreen);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelHeader);
             this.menuAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -411,13 +380,11 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            this.panelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.orderButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeButton)).EndInit();
+            this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -438,9 +405,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton menuSchemeButton;
         private Bunifu.Framework.UI.BunifuFlatButton menuPersonnelButton;
         private Bunifu.Framework.UI.BunifuImageButton maximizeButton;
-        private Bunifu.Framework.UI.BunifuImageButton testButton;
-        private Bunifu.Framework.UI.BunifuImageButton orderButton;
         private PanelPersonnel personnelScreen;
+        private Components.PanelPersonnelBrowse personnelBrowseScreen;
     }
 }
 

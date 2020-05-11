@@ -158,7 +158,8 @@ namespace SVO_Management
             {
                 MessageBox.Show(String.Format(
                     "Сила сигнала: {0}",
-                    btAdv.RawSignalStrengthInDBm
+                    btAdv.RawSignalStrengthInDBm,
+                    adv.CompanyId
                     ));
             }
 

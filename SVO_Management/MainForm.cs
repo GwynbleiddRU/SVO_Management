@@ -103,16 +103,19 @@ namespace SVO_Management
             }
         }
 
-        public void UpdatePersonnelInfoMarker(object sender, EventArgs e)
+        public void UpdatePersonnelInfoMarker(GMap.NET.WindowsForms.GMapMarker item, MouseEventArgs e)
         {
-            Personnel p = personnelScreen.mapControl1.curPersonnel;
-            personnelScreen.personnelNameLabel.Text = "Name: " + p.Name;
-            personnelScreen.personnelTypeLabel.Text = "Class: " + p.Class.ToString();
-            personnelScreen.personnelXCordLabel.Text = "Latitude: " + p.Coord.Position.Lat.ToString();
-            personnelScreen.personnelYCordLabel.Text = "Longitude: " + p.Coord.Position.Lng.ToString();
+            if (item.Tag == null)
+            {
+                Personnel p = personnelScreen.mapControl1.curPersonnel;
+                personnelScreen.personnelNameLabel.Text = "Name: " + p.Name;
+                personnelScreen.personnelTypeLabel.Text = "Class: " + p.Class.ToString();
+                personnelScreen.personnelXCordLabel.Text = "Latitude: " + p.Coord.Position.Lat.ToString();
+                personnelScreen.personnelYCordLabel.Text = "Longitude: " + p.Coord.Position.Lng.ToString();
 
-            personnelScreen.locationTitleLabel.Text = "Локация: ";
-            personnelScreen.personnelAreaLabel.Text = Territory.Check(p.Coord.Position.Lat, p.Coord.Position.Lng);
+                personnelScreen.locationTitleLabel.Text = "Локация: ";
+                personnelScreen.personnelAreaLabel.Text = Territory.Check(p.Coord.Position.Lat, p.Coord.Position.Lng);
+            }
         }
 
         public void UpdatePersonnelInfoListView(object sender, EventArgs e)
@@ -175,27 +178,30 @@ namespace SVO_Management
 
         private void menuSchemeButton_Click(object sender, EventArgs e)
         {
-            personnelScreen.Visible = true;
+            Refresh(personnelScreen);
         }
 
         private void menuPersonnelButton_Click(object sender, EventArgs e)
         {
-            personnelScreen.Visible = false;
+            Refresh(personnelBrowseScreen);
         }
 
         private void menuSettingsButton_Click(object sender, EventArgs e)
         {
-            personnelScreen.Visible = false;
+
         }
 
         private void menuLogOutButton_Click(object sender, EventArgs e)
         {
-            personnelScreen.Visible = false;
+            Application.Exit(); //пока нет авторизации...
         }
 
-        static void Refresh()
+        void Refresh(Control curPanel)
         {
+            personnelScreen.Visible = false;
+            personnelBrowseScreen.Visible = false;
 
+            curPanel.Visible = true;
         }
 
         #endregion Menu
@@ -203,18 +209,6 @@ namespace SVO_Management
         private void MainForm_Load(object sender, EventArgs e)
         {
             GeoCoordinate coord = new GeoCoordinate();
-        }
-
-        private void testButton_Click(object sender, EventArgs e)
-        {
-            BluetoothForm bluetooth = new BluetoothForm();
-            bluetooth.Show();
-        }
-
-        private void orderButton_Click(object sender, EventArgs e)
-        {
-            OrderForm order = new OrderForm();
-            order.Show();
         }
     }
 }

@@ -71,6 +71,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\PanelPersonnelBrowse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\PanelPersonnelBrowse.Designer.cs">
+      <DependentUpon>PanelPersonnelBrowse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personnel.cs" />
     <Compile Include="Territory.cs" />
     <Compile Include="Windows\AuthorizationForm.cs">
@@ -114,6 +120,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\PanelPersonnelBrowse.resx">
+      <DependentUpon>PanelPersonnelBrowse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>

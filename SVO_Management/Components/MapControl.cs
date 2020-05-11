@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Device.Location;
 
 namespace SVO_Management
 {
@@ -104,12 +105,72 @@ namespace SVO_Management
 
             if (e.Button == MouseButtons.Right)
             {
-                GMap.NET.WindowsForms.GMapMarker marker =
+                OrderForm order = new OrderForm(lng, lat);
+                if (order.ShowDialog() == DialogResult.Cancel)
+                    return;
+                else
+                {
+                    int requestedPersonnelAmount = 0; //по-хорошему при создании чп указать необходимое количество сотрудников
+                    List<Personnel> competentPersonnel = new List<Personnel>();
+                    List<Personnel> nearestPersonnel = new List<Personnel>();
+
+                    foreach (var personnel in MainForm.staff)
+                    {
+                        if (personnel.Class.ToString() == order.personeTypeComboBox.SelectedItem.ToString())
+                        {
+                            competentPersonnel.Add(personnel);
+                        }
+                    }
+
+                    //вдруг компетентнвых сотрудников меньше 5
+                    if (competentPersonnel.Count > 5)
+                        requestedPersonnelAmount = 5;
+                    else
+                        requestedPersonnelAmount = competentPersonnel.Count;
+
+                    for (int i = 0; i < requestedPersonnelAmount; i++) //выбираем requestedPersonnelAmount ближайших сотрудников
+                    {
+                        Personnel minDistPersonnel = null;
+                        double minDist = double.MaxValue;
+
+                        foreach (var personnel in competentPersonnel) //проходим по каждому сотруднику - ищем ближайших
+                        {
+                            GMap.NET.WindowsForms.Markers.GMarkerGoogle coords;
+
+                            coords = personnel.Coord;
+
+                            GeoCoordinate personnelPosition = new GeoCoordinate(coords.Position.Lat, coords.Position.Lng);
+                            GeoCoordinate orderPosition = new GeoCoordinate(lat, lng);
+
+                            double minDistCurrent = orderPosition.GetDistanceTo(personnelPosition);
+                            if (minDistCurrent < minDist)
+                            {
+                                minDist = minDistCurrent;
+                                minDistPersonnel = personnel;
+                            }
+                        }
+                        nearestPersonnel.Add(minDistPersonnel);
+                        competentPersonnel.Remove(minDistPersonnel);
+                    }
+
+                    //test zone
+                    StringBuilder sb = new StringBuilder();
+
+                    foreach(var a in nearestPersonnel)
+                    {
+                        sb.Append(a.Name + "\n");
+                    }
+
+                    MessageBox.Show("Ближайшие компетентные сотрудники: \n\n" + sb.ToString() + "\n (отправляем им уведомления)");
+                    //test zone
+
+                    GMap.NET.WindowsForms.GMapMarker marker =
                     new GMap.NET.WindowsForms.Markers.GMarkerGoogle(
                         new GMap.NET.PointLatLng(lat, lng),
                         GMap.NET.WindowsForms.Markers.GMarkerGoogleType.blue_pushpin);
-                markers.Markers.Add(marker);
-                marker.Tag = "warning";
+                    markers.Markers.Add(marker);
+                    marker.Tag = "warning";
+                }
             }
         }
 
@@ -121,6 +182,10 @@ namespace SVO_Management
                 {
                     Personnel p = (from x in MainForm.staff where x.Coord == item select x).First();
                     curPersonnel = p;
+                }
+                else
+                {
+                    return;
                 }
             }
         }

@@ -12,8 +12,14 @@ namespace SVO_Management
 {
     public partial class OrderForm : Form
     {
-        public OrderForm()
+        double Lng, Lat;
+
+        public OrderForm(double lng, double lat)
         {
+            Lng = lng;
+            Lat = lat;
+            Personnel.Type requestedType;
+
             InitializeComponent();
         }
 
@@ -29,5 +35,23 @@ namespace SVO_Management
         }
         #endregion PanelHeader
 
+
+        private void OrderForm_Load(object sender, EventArgs e)
+        {
+            coordsLabel.Text = Lat + "° " + Lng + "°";
+        }
+
+        private void orderSendButton_Click(object sender, EventArgs e)
+        {
+            //отправляем уведомления сотрудникам
+
+            DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void OrderForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }
